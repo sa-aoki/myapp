@@ -27,7 +27,6 @@ urlpatterns = [
     path('', views.TopView.as_view(), name="top"),
     path('revitdb/project_info/', views.Project_infoListView.as_view(), name="list"),
     path('export/', views.room_export, name='room_export'),         #エクスポートファイル作成画面
-    path('download/', views.file_export, name='file_export'),         #ファイルダウンロード画面
     path('modelform/', views.modelform_upload, name='modelform'),   #ファイルアップロード画面
 
 

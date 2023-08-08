@@ -15,6 +15,28 @@
      {{ filter.form.level.label }} {{ filter.form.level|add_class:"form-control" }}<br> 
         <input type="submit" value='フィルタ'/>
 </form><br>
+
+<script type="text/javascript">
+// プルダウンでselectされた値を取得する
+    var select1 = document.querySelector('select[name=project_info]');
+    var select2 = document.querySelector('select[name=level]');
+
+    var a_options = select1.options;
+    var b_options = select2.options;
+
+    for (var i = 0; i < a_options.length; i++) {
+        if (a_options[i].selected) 
+        console.log(a_options[i].value); 
+    }
+
+    for (var i = 0; i < b_options.length; i++) {
+        if (b_options[i].selected) 
+        console.log(b_options[i].value); 
+    }
+
+
+</script>
+
     <table id ='filtered_table' class="table table-striped table-hover table-bordered">
         <thead>
             <tr>
@@ -51,22 +73,6 @@
         {% endfor %}
     </table>
 
-<script type="text/javascript">
-// selectされたidを取得して、csv出力用のファイルを作成する
-    const select = document.querySelector('select');
-    const select1 = select.project_info;
-    const select2 = select.level;
-
-    const options = select.options;
-    {% comment %} const option1 = select1.option; {% endcomment %}
-
-    for (let i = 0; i < options.length; i++) {
-        if (options[i].selected) 
-        console.log(options[i].value); 
-    }
-
-
-</script>
 
     <a id="back-btn" href="#">TOPに戻る</a>
 

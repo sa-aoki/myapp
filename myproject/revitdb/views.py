@@ -60,38 +60,16 @@ class RoomUpdateView(UpdateView):
     template_name_suffix = '_update_form'
 
 
-#データダウンロード確認画面
-def file_export(request):
-    template_name='revitdb/file_export.html'
-    return render(request, template_name)
-   
-
 
 #データダウンロード
 def room_export(request):
-    template_name='revitdb/room_export.html'
     qs = Room.objects.all()
     df = read_frame(qs)
     exp_path = settings.MEDIA_ROOT / 'room_export.csv'
     df.to_csv(exp_path, encoding='utf_8_sig',index=False)
-
-    def get_context_data(self, **kwargs):
-
-        context = super().get_context_data(**kwargs)
-
-        print(context)
-
-        return context
-    return render(request, template_name,context)
+    return render(request, 'revitdb/room_export.html')
 
 
-    #zipファイルでダウンロード
-    # response = HttpResponse(content_type="application/zip")
-    # writer = zipfile.ZipFile(response, 'w')
-    # writer.writestr(obj1.image_field.name, obj1.image_field.read())
-    # writer.writestr(obj2.image_field.name, obj2.image_field.read())
-    # writer.close()
-    # return response
 
 
 
