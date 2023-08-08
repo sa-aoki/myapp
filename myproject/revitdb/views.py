@@ -41,18 +41,18 @@ class Floor_finishListView(LoginRequiredMixin, ListView):
 
 
 #部屋リスト
-# class RoomListView(LoginRequiredMixin, ListView):
-#     model = Room
-#     # template_name = "list.html"
+class RoomListView(LoginRequiredMixin, ListView):
+    model = Room
+    # template_name = "list.html"
 
-#     def get_context_data(self, **kwargs):
-#         # 既存のget_context_dataをコール
-#         context = super().get_context_data(**kwargs)
-#         # 追加したいコンテキスト情報(取得したコンテキスト情報のキーのリストを設定)
-#         extra = {"extra": list(context.keys())}
-#         # コンテキスト情報のキーを追加
-#         context.update(extra)
-#         return context
+    def get_context_data(self, **kwargs):
+        # 既存のget_context_dataをコール
+        context = super().get_context_data(**kwargs)
+        # 追加したいコンテキスト情報(取得したコンテキスト情報のキーのリストを設定)
+        extra = {"extra": list(context.keys())}
+        # コンテキスト情報のキーを追加
+        context.update(extra)
+        return context
     
 class RoomUpdateView(UpdateView):
     model = Room
@@ -70,11 +70,19 @@ def file_export(request):
 #データダウンロード
 def room_export(request):
     template_name='revitdb/room_export.html'
-    qs = Room.objects.filter(project_info__id=1,level__id=1).all()
+    qs = Room.objects.all()
     df = read_frame(qs)
     exp_path = settings.MEDIA_ROOT / 'room_export.csv'
     df.to_csv(exp_path, encoding='utf_8_sig',index=False)
-    return render(request, template_name)
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+
+        print(context)
+
+        return context
+    return render(request, template_name,context)
 
 
     #zipファイルでダウンロード
@@ -145,4 +153,6 @@ class LogoutView(LoginRequiredMixin, LogoutView):
 
 #     return render(request,'revitdb/product.html',{'form': form,})
 
-
+def office(request):
+    print(request.GET.get("id"))
+    return render(request, 'revitdb/product_list.html')

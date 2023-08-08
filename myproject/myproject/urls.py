@@ -43,7 +43,6 @@ urlpatterns = [
 
 
     path("revitdb/product_list/", views.product_list, name="product_list"), #部屋一覧
-    # path("revitdb/product/", views.product, name="product"), #編集画面
     path('revitdb/room/edit/<int:pk>', views.RoomUpdateView.as_view(), name='edit'),  #部屋の編集画面
 ]
 if settings.DEBUG:
