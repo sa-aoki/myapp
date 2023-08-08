@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block tytle %}トップ画面{% endblock %}
+{% block content %}
+<section id="main-visual">
+    <h1 id="first-heading">RevitDB</h1>
+    <div id="top-back">
+    </div>
+    <button id="top-btn" class="btn btn-outline-dark" onclick="location.href='{% url 'list' %}'">プロジェクト一覧</button>
+    <button id="top-masterbtn1" class="btn btn-outline-dark " onclick="location.href='{% url 'wall_finish_list' %}'">壁仕上マスタ</button><br>
+    <button id="top-masterbtn2" class="btn btn-outline-dark " onclick="location.href='{% url 'ceiling_finish_list' %}'">天井仕上マスタ</button><br>
+    <button id="top-masterbtn3" class="btn btn-outline-dark " onclick="location.href='{% url 'floor_finish_list' %}'">床仕上マスタ</button>
+
+    <img src="/media/back.png" alt="トップ背景">
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,106 @@
+/* PC、スマホ共通スタイル */
+
+
+/*================
+ PC用のスタイル 
+=================*/
+
+/* 横幅設定 */
+/* body {
+    max-width: 1080px;
+    min-width: 960px;
+    margin: 0 auto 0 auto;
+  } */
+
+#main-visual>img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -10;
+ } 
+
+#top-back {
+    position: relative;
+    top: 200px;
+    left: 50px;
+    background-color: white;
+    max-width: 900px;
+    height: 400px;
+    width: 800px;
+    z-index: -5;
+ }
+
+
+#first-heading {
+    position: absolute;
+    font-size: 60px;
+    font-weight: bold;
+    margin: 50px 0 0 50px;
+    z-index: 10;
+}
+
+#top-btn {
+    position: relative;
+    top: -150px;
+    left: 70px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 0;
+}
+
+#top-masterbtn1 {
+    position: relative;
+    top: -80px;
+    left: -90px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 0;
+}
+
+#top-masterbtn2 {
+    position: relative;
+    top: -70px;
+    left: 70px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 0;
+}
+
+
+#top-masterbtn3 {
+    position: relative;
+    top: -60px;
+    left: 70px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 0;
+}
+
+
+a {
+    color: blue;
+    font-size: 16px;
+}
+
+.btn-warning {
+    font-weight: bold;
+}
+
+.nav-link {
+    font-weight: bold;
+    color: rgb(71, 71, 71);
+}
+
+.navbar-brand {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(71, 71, 71);
+<<<<<<< HEAD
+}
+
+/* .form-group {
+    width: 100px;
+} */
+=======
+}
+>>>>>>> c51985d3e9ae05af23d0018a77309b95401c8d8b

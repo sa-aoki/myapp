@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block tytle %}プロジェクト一覧{% endblock %}
+{% block content %}
+<br>
+<h2>プロジェクト一覧</h2> <br>
+<a href="{% url 'top' %}">TOPへ</a><br>
+<a href="{% url 'product_list' %}">部屋一覧へ</a>
+<br>
+<table class="table table-striped table-hover table-bordered ">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>設計番号</th>
+            <th>プロジェクト名</th>
+            <th>工事種別</th>
+        </tr>
+    </thead>
+    {% for project_info in object_list %}
+    <tr>
+        {% comment %} <td><input  type="radio" name="project">  {% endcomment %}
+        <td>{{ project_info.id }}</td>
+        <td>{{ project_info.project_No }}</td>
+        <td>{{ project_info.name }}</td>
+        <td>{{ project_info.project_type }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% comment %} <a href="{% url 'product_list' %}">部屋一覧へ</a> {% endcomment %}
+<br>
+{# ページの表示 #}
+{{ page_obj.number }} / {{ page_obj.paginator.num_pages }} ページ<br>
+
+{# 前へ #}
+{% if page_obj.has_previous %}
+<a href="?page=1">&laquo; 先頭</a>
+<a href="?page={{ page_obj.previous_page_number }}">前へ</a>
+{% endif %}
+
+{# 次へ #}
+{% if page_obj.has_next %}
+<a href="?page={{ page_obj.next_page_number }}">次へ</a>
+<a href="?page={{ page_obj.paginator.num_pages }}">最後 &raquo;</a>
+{% endif %}
+{% endblock %}
