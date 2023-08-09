@@ -25,24 +25,24 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.TopView.as_view(), name="top"),
-    path('revitdb/project_info/', views.Project_infoListView.as_view(), name="list"),
-    path('export/', views.room_export, name='room_export'),         #エクスポートファイル作成画面
     path('modelform/', views.modelform_upload, name='modelform'),   #ファイルアップロード画面
 
+    path('revitdb/project_info/', views.Project_infoListView.as_view(), name="list"), #プロジェクト情報一覧
+
+    path('revitdb/wall_finish/', views.Wall_finishListView.as_view(), name="wall_finish_list"),          #壁仕上一覧
+    path('revitdb/ceiling_finish/', views.Ceiling_finishListView.as_view(), name="ceiling_finish_list"), #天井仕上一覧
+    path('revitdb/floor_finish/', views.Floor_finishListView.as_view(), name="floor_finish_list"),       #床仕上一覧
 
 
-    path('revitdb/wall_finish/', views.Wall_finishListView.as_view(), name="wall_finish_list"),
-    path('revitdb/ceiling_finish/', views.Ceiling_finishListView.as_view(), name="ceiling_finish_list"),
-    path('revitdb/floor_finish/', views.Floor_finishListView.as_view(), name="floor_finish_list"),
-
-    # path('revitdb/room/', views.RoomListView.as_view(), name="room_list"),
-
-    path('login/', views.LoginView.as_view(), name="login"),
-    path('logout/', views.LogoutView.as_view(), name="logout"),
-
-
-    path("revitdb/product_list/", views.product_list, name="product_list"), #部屋一覧
+        path("revitdb/product_list/", views.product_list, name="product_list"),       #部屋一覧
     path('revitdb/room/edit/<int:pk>', views.RoomUpdateView.as_view(), name='edit'),  #部屋の編集画面
+
+
+    path('login/', views.LoginView.as_view(), name="login"),    #ログイン画面
+    path('logout/', views.LogoutView.as_view(), name="logout"), #ログアウト画面
+
+
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

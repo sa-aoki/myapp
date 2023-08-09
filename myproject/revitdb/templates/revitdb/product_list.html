@@ -9,8 +9,8 @@
 <a href="http://127.0.0.1:8000/modelform/">CSVファイルアップロード</a><br><br>
 
 <form class="form-group">
-     {{ filter.form.project_info.label }} {{ filter.form.project_info|add_class:"form-control" }} <br>
-     {{ filter.form.level.label }} {{ filter.form.level|add_class:"form-control" }}<br> 
+     {{ filter.form.project_info.label }} {{ filter.form.project_info|add_class:"form-control" }} <br>  <!--プロジェクト名でフィルタする-->
+     {{ filter.form.level.label }} {{ filter.form.level|add_class:"form-control" }}<br>                 <!--レベルでフィルタする--> 
         <input type="submit" value='フィルタ'/><br><br>
 </form><br>
 <article>
@@ -55,6 +55,8 @@
     </table>
 </article>
 
+
+<!--jQuery HTMLのテーブルをエクスポートする-->
 <script src="/static/js/xlsx.core.min.js"></script>
 <script src="/static/js/Blob.js"></script>
 <script src="/static/js/FileSaver.js"></script>
@@ -81,8 +83,7 @@ new TableExport(DefaultTable, {
 </script>
 
 
-
-    <a id="back-btn" href="#">TOPに戻る</a>
+<a id="back-btn" href="#">TOPに戻る</a>
 
 {% endblock %}
 
