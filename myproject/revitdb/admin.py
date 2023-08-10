@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Project_info, Level, Wall_finish, Ceiling_finish, Floor_finish, Room
 from import_export import resources
-from import_export.admin import ImportMixin, ExportMixin
+from import_export.admin import ImportMixin, ExportMixin, ImportExportMixin
 
 
 class Project_infoAdmin(admin.ModelAdmin):
@@ -41,10 +41,10 @@ class RoomResource(resources.ModelResource):
         import_id_fields = ('IfcGUID',) 
         fields=('project_info', 'IfcGUID', 'level', 'No', 'name', 'wall_finish', 'ceiling_finish', 'floor_finish')
         skip_unchanged = True
-        report_skipped= False 
+        report_skipped= True 
 
-class RoomAdmin(ImportMixin, ExportMixin, admin.ModelAdmin):
-    list_display = ('id', 'project_info', 'level', 'No', 'name', 'wall_finish', 'ceiling_finish', 'floor_finish', )
+class RoomAdmin(ImportExportMixin, admin.ModelAdmin):
+    list_display = ('project_info', 'level', 'No', 'name', 'wall_finish', 'ceiling_finish', 'floor_finish', )
     list_filter = ('project_info', 'level')
     readonly_fields = ('project_info', 'IfcGUID', 'level', 'No',)
     resource_class = RoomResource
