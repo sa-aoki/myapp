@@ -51,7 +51,7 @@
 #top-masterbtn1 {
     position: relative;
     top: -80px;
-    left: -80px;
+    left: -75px;
     font-size: 18px;
     font-weight: bold;
     z-index: 0;
@@ -97,3 +97,26 @@ a {
     color: rgb(71, 71, 71);
 }
 
+.button-default.xlsx {
+    font-size: 18px;
+    color: blue;
+
+}
+
+.button-default.csv {
+    font-size: 18px;
+    color: blue;
+
+}
+
+.button-default.txt {
+    font-size: 18px;
+    color: blue;
+
+}
+
+#myform {
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 0;
+}

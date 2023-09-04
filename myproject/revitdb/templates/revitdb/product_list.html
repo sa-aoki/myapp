@@ -29,7 +29,6 @@
                 <th>壁仕上</th>
                 <th>天井仕上</th>
                 <th>床仕上</th>
-                <th>アクション</th>
 
             </tr>
         </thead>
@@ -45,9 +44,6 @@
                 <td>{{ obj.wall_finish }}</td>
                 <td>{{ obj.ceiling_finish }}</td>
                 <td>{{ obj.floor_finish }}</td>
-                <td>
-                    <button class="btn btn-primary" onclick="location.href='{% url 'edit' pk=obj.pk %}'">編集</button>
-                </td>
 
             </tr>
         {% endfor %}
@@ -57,10 +53,10 @@
 
 
 <!--jQuery HTMLのテーブルをエクスポートする-->
-<script src="/static/js/xlsx.core.min.js"></script>
-<script src="/static/js/Blob.js"></script>
-<script src="/static/js/FileSaver.js"></script>
-<script src="/static/js/tableexport.js"></script>
+<script src="/static/js/xlsx.core.min.js?0818"></script>
+{% comment %} <script src="/static/js/Blob.js?0818"></script> {% endcomment %}
+<script src="/static/js/FileSaver.min.js"></script>
+<script src="/static/js/tableexport.min.js"></script>
 <script>
 var DefaultTable = document.getElementById('default-table');
 new TableExport(DefaultTable, {
@@ -76,14 +72,15 @@ new TableExport(DefaultTable, {
         emptyCSS: '.tableexport-empty',             // (selector, selector[]), selector(s) to replace cells with an empty string in the exported file(s) (default: '.tableexport-empty')
         trimWhitespace: true,                       // (Boolean), remove all leading/trailing newlines, spaces, and tabs from cell text in the exported file(s) (default: true)
         RTL: false,                                 // (Boolean), set direction of the worksheet to right-to-left (default: false)
-        sheetname: 'id'                             // (id, String), sheet name for the exported spreadsheet, (default: 'id')
+        sheetname: 'room'                             // (id, String), sheet name for the exported spreadsheet, (default: 'id')
     });
+
+    
 
 
 </script>
 
 
-<a id="back-btn" href="#">TOPに戻る</a>
-
+<a id="back-btn" href="#">ページ先頭へ</a>
 {% endblock %}
 

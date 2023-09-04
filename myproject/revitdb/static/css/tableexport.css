@@ -33,7 +33,7 @@
   color: #222222;
   cursor: pointer;
   padding: 5px;
-  margin: 5px;
+  margin: 10px;
 }
 
 .button-default.xlsx:before,
@@ -47,7 +47,7 @@
 .xls,
 .csv,
 .txt {
-  margin: 4px 0;
+  margin: 10px 5px;
 }
 
 .xlsx:before,
@@ -78,3 +78,4 @@
   content: "";
   background: purple url(../img/txt.svg) no-repeat center;
 }
+

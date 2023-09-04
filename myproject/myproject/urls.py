@@ -34,8 +34,9 @@ urlpatterns = [
     path('revitdb/floor_finish/', views.Floor_finishListView.as_view(), name="floor_finish_list"),       #床仕上一覧
 
 
-        path("revitdb/product_list/", views.product_list, name="product_list"),       #部屋一覧
-    path('revitdb/room/edit/<int:pk>', views.RoomUpdateView.as_view(), name='edit'),  #部屋の編集画面
+    path("revitdb/product_list/", views.product_list, name="product_list"),          #部屋一覧
+    # path('revitdb/room_list/', views.RoomListView.as_view(), name="room_list"),      #部屋一覧
+    path('revitdb/update/<int:pk>', views.RoomUpdateView, name='room_update'),  #部屋の編集画面
 
 
     path('login/', views.LoginView.as_view(), name="login"),    #ログイン画面

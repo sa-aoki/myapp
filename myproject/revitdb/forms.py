@@ -8,16 +8,26 @@ from .models import Document
 #部屋
 class RoomForm(forms.ModelForm):
    
-  #  def __init__(self, *args, **kwargs):
-  #       super().__init__(*args, **kwargs)
-  #       self.fields['project_info'].widget.attrs['disabled'] = 'disabled'
-  #       self.fields['IfcGUID'].widget.attrs['disabled'] = 'disabled'
-  #       self.fields['level'].widget.attrs['disabled'] = 'disabled'
-  #       self.fields['No'].widget.attrs['disabled'] = 'disabled'
+  def __init__(self, *args, **kwargs):
+      super(RoomForm, self).__init__(*args, **kwargs)
+      instance = getattr(self, 'instance', None)
+      # if instance and instance.pk:
+      #   self.fields['project_info'].widget.attrs['readonly'] = True
+      #   self.fields['IfcGUID'].widget.attrs['readonly'] = True
+      #   self.fields['level'].widget.attrs['readonly'] = True
+      #   self.fields['No'].widget.attrs['readonly'] = True
+
+  # def clean_sku(self):
+  #     instance = getattr(self, 'instance', None)
+  #     if instance and instance.pk:
+  #         return instance.project_info
+  #     else:
+  #         return self.cleaned_data['project_info']
 
   class Meta:
-        model = Room
-        fields = ['wall_finish', 'ceiling_finish', 'floor_finish']
+      model = Room
+      fields = ['wall_finish', 'ceiling_finish', 'floor_finish']
+        
 
 
 

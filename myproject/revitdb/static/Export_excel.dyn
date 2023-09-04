@@ -4333,6 +4333,94 @@
       ],
       "Replication": "Auto",
       "Description": "文字列内に出現するすべての文字を別の文字に置き換えます。\n\nString.Replace (string: string, searchFor: string, replaceWith: string): string"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "RSL",
+      "Id": "30b609060dd24d4fae47f33ff50c0330",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a9f804d639ab425d9e56c253b44c43eb",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "文字列を作成します。"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "9",
+      "Id": "0459e1207f3d4e04ac1c18566aaf1cde",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "93e8d32b50994377b0ebc7cd642ac24e",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "文字列を作成します。"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.String.Replace@string,string,string",
+      "Id": "6589db07cbec4bebb47eac707063ff5c",
+      "Inputs": [
+        {
+          "Id": "d32e25d8f7ff478f8d4c65a8782845a1",
+          "Name": "string",
+          "Description": "サブストリングを置き換える文字列。\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "47c0b24df36d44b3ad2411781f7de184",
+          "Name": "searchFor",
+          "Description": "置き換えられる文字。\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dc23de9684e2487aaf392d2be1e82e6e",
+          "Name": "replaceWith",
+          "Description": "置き換える文字。\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6e03ede9316e4ca796e6c68a16aa273a",
+          "Name": "string",
+          "Description": "置き換えを行った文字列。",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "文字列内に出現するすべての文字を別の文字に置き換えます。\n\nString.Replace (string: string, searchFor: string, replaceWith: string): string"
     }
   ],
   "Connectors": [
@@ -5207,6 +5295,12 @@
       "IsHidden": "False"
     },
     {
+      "Start": "071246d601fb4baf844e8458d82ccdcf",
+      "End": "d32e25d8f7ff478f8d4c65a8782845a1",
+      "Id": "a8b4dbf5bad845739acfa1698b736b4f",
+      "IsHidden": "False"
+    },
+    {
       "Start": "b85592959bda4f2bac516f4919f8c943",
       "End": "946a6f6162eb4471bbab44fbd69138ea",
       "Id": "a0f452b936994a68b0de8bb3e1fdecaf",
@@ -5223,18 +5317,22 @@
       "End": "fa2416d8e2f2474485b2dbc0aed0014d",
       "Id": "cbeb8c0c7e5a4811b8a7dab2d0fc4f1f",
       "IsHidden": "False"
+    },
+    {
+      "Start": "a9f804d639ab425d9e56c253b44c43eb",
+      "End": "47c0b24df36d44b3ad2411781f7de184",
+      "Id": "f0386e880b944ace81aeac4692865f0a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "93e8d32b50994377b0ebc7cd642ac24e",
+      "End": "dc23de9684e2487aaf392d2be1e82e6e",
+      "Id": "9892614a22674d51b3dfe11a5c877b28",
+      "IsHidden": "False"
     }
   ],
   "Dependencies": [],
-  "NodeLibraryDependencies": [
-    {
-      "Name": "部屋集計.xlsx",
-      "ReferenceType": "External",
-      "Nodes": [
-        "cbf57916865044198b3e8d6155eaa84f"
-      ]
-    }
-  ],
+  "NodeLibraryDependencies": [],
   "Thumbnail": "",
   "GraphDocumentationURL": null,
   "ExtensionWorkspaceData": [
@@ -6430,7 +6528,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2703.1557762778652,
-        "Y": -1616.0590386548124
+        "Y": -1620.607192153014
       },
       {
         "Name": "String",
@@ -6440,7 +6538,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2703.8051270062351,
-        "Y": -1483.2383762244922
+        "Y": -1487.7865297226938
       },
       {
         "Name": "String",
@@ -6450,7 +6548,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2704.403405137055,
-        "Y": -1343.4946144296323
+        "Y": -1348.0427679278339
       },
       {
         "Name": "String",
@@ -6460,7 +6558,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2710.642716389375,
-        "Y": -1198.1098195132522
+        "Y": -1202.6579730114538
       },
       {
         "Name": "String",
@@ -6470,7 +6568,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2710.6961333019854,
-        "Y": -1036.8133276068024
+        "Y": -1041.361481105004
       },
       {
         "Name": "String",
@@ -6480,7 +6578,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2717.744579958945,
-        "Y": -882.57623584984231
+        "Y": -887.12438934804391
       },
       {
         "Name": "String",
@@ -6490,7 +6588,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2713.656068939325,
-        "Y": -729.09444860309259
+        "Y": -733.64260210129419
       },
       {
         "Name": "String",
@@ -6500,7 +6598,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2960.0166060454558,
-        "Y": -1653.7490518586624
+        "Y": -1658.297205356864
       },
       {
         "Name": "String",
@@ -6510,7 +6608,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2954.2197530006752,
-        "Y": -1501.6199174167523
+        "Y": -1506.1680709149539
       },
       {
         "Name": "String",
@@ -6520,7 +6618,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2972.8047557156251,
-        "Y": -1323.5670991133225
+        "Y": -1328.1152526115241
       },
       {
         "Name": "String",
@@ -6530,7 +6628,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2965.7430334924047,
-        "Y": -1189.8608950680223
+        "Y": -1194.4090485662239
       },
       {
         "Name": "String",
@@ -6540,7 +6638,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2964.3068472484756,
-        "Y": -1023.2632907716925
+        "Y": -1027.8114442698941
       },
       {
         "Name": "String",
@@ -6550,7 +6648,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2959.4568515558349,
-        "Y": -875.07017149789226
+        "Y": -879.61832499609386
       },
       {
         "Name": "String",
@@ -6560,7 +6658,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2966.3995700635751,
-        "Y": -723.68777588706189
+        "Y": -728.23592938526349
       },
       {
         "Name": "String",
@@ -6570,7 +6668,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2716.0802308688048,
-        "Y": -547.99749551006107
+        "Y": -552.54564900826267
       },
       {
         "Name": "String",
@@ -6579,8 +6677,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2968.823731993054,
-        "Y": -542.590822794031
+        "X": 2957.9872539028779,
+        "Y": -561.58761374580081
       },
       {
         "Name": "String.Replace",
@@ -6691,6 +6789,36 @@
         "Excluded": false,
         "X": 6433.1664247717245,
         "Y": 4327.764760642247
+      },
+      {
+        "Name": "String",
+        "ShowGeometry": true,
+        "Id": "30b609060dd24d4fae47f33ff50c0330",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2713.2079385410602,
+        "Y": -396.96219966124772
+      },
+      {
+        "Name": "String",
+        "ShowGeometry": true,
+        "Id": "0459e1207f3d4e04ac1c18566aaf1cde",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2960.1643257002461,
+        "Y": -396.41398714763022
+      },
+      {
+        "Name": "String.Replace",
+        "ShowGeometry": true,
+        "Id": "6589db07cbec4bebb47eac707063ff5c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 5700.4320000636435,
+        "Y": -336.2118082294844
       }
     ],
     "Annotations": [
@@ -6880,7 +7008,7 @@
         "Background": "#FFC1D676"
       },
       {
-        "Id": "76a4e9d6ed5e4070bf9393bcd5daaf64",
+        "Id": "625d3d5dda4d4925a083fccc7582b2ad",
         "Title": "レベルリスト",
         "DescriptionText": "<グループの説明を編集するにはここをダブル クリック>",
         "IsExpanded": true,
@@ -6902,23 +7030,25 @@
           "0a30195c10ae495581fd16c8da6cc38e",
           "cdb8bc2ac11f40688d4a859940f36f39",
           "a7347e9252884f089ba352d3d31b95e5",
-          "65c770bbe11a4a358bf5e9566175f3d7"
+          "65c770bbe11a4a358bf5e9566175f3d7",
+          "30b609060dd24d4fae47f33ff50c0330",
+          "0459e1207f3d4e04ac1c18566aaf1cde"
         ],
         "HasNestedGroups": false,
         "Left": 2693.1557762778652,
-        "Top": -1726.7490518586624,
+        "Top": -1731.297205356864,
         "Width": 437.64897943775986,
-        "Height": 1316.1582290646313,
+        "Height": 1466.8832182092337,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": -1653.7490518586624,
-        "InitialHeight": 1256.1582290646313,
+        "InitialTop": -1658.297205356864,
+        "InitialHeight": 1423.8832182092337,
         "TextblockHeight": 63.0,
         "Background": "#FF48B9FF"
       }
     ],
-    "X": -2195.4534931534085,
-    "Y": 170.31358787590003,
-    "Zoom": 0.35722005903471438
+    "X": -1145.3637514377679,
+    "Y": 1155.6331563676895,
+    "Zoom": 0.50454074689456352
   }
 }

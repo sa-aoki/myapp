@@ -499,6 +499,7 @@
       }
     }
 
+
     global.FileReader = FileReader
     global.File = File
     global.Blob = Blob
@@ -682,3 +683,7 @@
     blob.stream = stream
   }
 })()
+
+
+
+
